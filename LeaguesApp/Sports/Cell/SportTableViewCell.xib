@@ -60,6 +60,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <accessibility key="accessibilityConfiguration" identifier="SportTableViewCell"/>
+            <connections>
+                <outlet property="StadiumName" destination="KVy-3V-REa" id="Rl9-9J-S6R"/>
+                <outlet property="badgeImageView" destination="O7o-jq-uYI" id="c9X-Eb-N69"/>
+                <outlet property="teamBadge" destination="kYk-A8-ltb" id="1lw-97-fp3"/>
+                <outlet property="teamName" destination="kYk-A8-ltb" id="mJ7-Yg-UwB"/>
+            </connections>
             <point key="canvasLocation" x="55.725190839694655" y="12.67605633802817"/>
         </tableViewCell>
     </objects>

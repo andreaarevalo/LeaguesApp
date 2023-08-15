@@ -9,6 +9,10 @@ import UIKit
 
 class SportTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var StadiumName: UILabel!
+    @IBOutlet weak var teamBadge: UILabel!
+    @IBOutlet weak var badgeImageView: UIImageView!
+    @IBOutlet weak var teamName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +22,12 @@ class SportTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUI(_ team : TeamModel) {
+        self.StadiumName.text = team.strStadium
+        self.teamName.text = team.strTeam
+        Utils.loadImageWithUrlForImageView(url:team.strTeamBadge , imageView: badgeImageView)
     }
     
 }
