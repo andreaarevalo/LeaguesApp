@@ -60,8 +60,6 @@ class DataServices {
             
             else { return }
             let teamsModel = TeamsModel().fromJsonToTeamsModel(responseJSON)
-            
-            print(teamsModel.teams.count)
             onCompletion(teamsModel.teams)
         }, onError: onError)
     }

@@ -17,34 +17,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwI-aY-QbD">
-                                <rect key="frame" x="164" y="122.99999999999999" width="65" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="148.33333333333334" y="123" width="96.333333333333343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0GF-fZ-HJf">
-                                <rect key="frame" x="0.0" y="163.33333333333331" width="393" height="654.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kA3-Qk-gsF"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7EO-MG-L40"/>
-                                </connections>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="q38-bH-RTM">
+                                <rect key="frame" x="0.0" y="167.66666666666669" width="393" height="684.33333333333326"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3TB-dZ-uOz">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="68.333333333333329"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="z3B-tg-HQI"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0GF-fZ-HJf">
+                                        <rect key="frame" x="0.0" y="74.333333333333371" width="393" height="610"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="kA3-Qk-gsF"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="7EO-MG-L40"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0GF-fZ-HJf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4Gj-yU-M00"/>
-                            <constraint firstItem="0GF-fZ-HJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Phl-LK-rsT"/>
-                            <constraint firstItem="0GF-fZ-HJf" firstAttribute="top" secondItem="QwI-aY-QbD" secondAttribute="bottom" constant="20" id="RfN-gK-XuE"/>
+                            <constraint firstItem="q38-bH-RTM" firstAttribute="top" secondItem="QwI-aY-QbD" secondAttribute="bottom" constant="14.67" id="CWm-8i-goW"/>
+                            <constraint firstAttribute="bottom" secondItem="q38-bH-RTM" secondAttribute="bottom" id="aaH-pB-Tbh"/>
+                            <constraint firstItem="q38-bH-RTM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apj-Oq-Unn"/>
                             <constraint firstItem="QwI-aY-QbD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bT4-Os-rM7"/>
                             <constraint firstItem="QwI-aY-QbD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="epF-mQ-aeQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0GF-fZ-HJf" secondAttribute="trailing" id="jKG-LB-zUm"/>
+                            <constraint firstItem="q38-bH-RTM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uVs-0C-xZk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pCJ-uk-2ux"/>
                     <connections>
                         <outlet property="mainTableView" destination="0GF-fZ-HJf" id="i26-BC-woy"/>
+                        <outlet property="searchBar" destination="3TB-dZ-uOz" id="itI-Q8-aVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

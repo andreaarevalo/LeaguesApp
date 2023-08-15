@@ -25,7 +25,6 @@ class Interactor<V: BaseView> {
     
     func getLeagues() {
         self.dataServices.LeaguesDataService(onCompletion: {reponse in
-            print(reponse.count)
             self.view?.showLeagues(reponse)
         }, onError: { error in
             self.view?.showError(error)

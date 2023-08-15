@@ -12,6 +12,9 @@ struct Constants {
     static let teams =  "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l="
     
     //Cells
-    static let LeagueCellIdentifier = "LeagueTableViewCell"
-    static let SportCellIdentifier = "SportTableViewCell"
+    static let leagueCellIdentifier = "LeagueTableViewCell"
+    static let sportCellIdentifier = "SportTableViewCell"
+    
+    static let sportsViewControllerStoryboard = "SportsViewControllerStoryboard"
+    static let sportsViewController = "SportsViewController"
 }

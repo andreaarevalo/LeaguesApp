@@ -27,14 +27,14 @@
                                     <constraint firstAttribute="width" constant="70" id="ULB-A7-fFl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYk-A8-ltb">
-                                <rect key="frame" x="110" y="23" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYk-A8-ltb">
+                                <rect key="frame" x="110" y="23" width="233" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-3V-REa">
-                                <rect key="frame" x="110" y="54" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-3V-REa">
+                                <rect key="frame" x="110" y="33" width="233" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,6 +45,8 @@
                             <constraint firstItem="kYk-A8-ltb" firstAttribute="leading" secondItem="O7o-jq-uYI" secondAttribute="trailing" constant="20" id="3ad-2Q-pW3"/>
                             <constraint firstItem="O7o-jq-uYI" firstAttribute="leading" secondItem="MGO-EN-MX6" secondAttribute="leading" constant="20" id="3gJ-sJ-4uz"/>
                             <constraint firstItem="kYk-A8-ltb" firstAttribute="top" secondItem="MGO-EN-MX6" secondAttribute="top" constant="23" id="Cbn-P9-nIY"/>
+                            <constraint firstAttribute="trailing" secondItem="kYk-A8-ltb" secondAttribute="trailing" constant="10" id="TBn-9V-3Tb"/>
+                            <constraint firstItem="KVy-3V-REa" firstAttribute="trailing" secondItem="kYk-A8-ltb" secondAttribute="trailing" id="TdZ-Zs-bRd"/>
                             <constraint firstItem="KVy-3V-REa" firstAttribute="leading" secondItem="kYk-A8-ltb" secondAttribute="leading" id="ak6-Gj-n7h"/>
                             <constraint firstItem="O7o-jq-uYI" firstAttribute="centerY" secondItem="MGO-EN-MX6" secondAttribute="centerY" id="bab-s9-EFF"/>
                             <constraint firstItem="KVy-3V-REa" firstAttribute="top" secondItem="kYk-A8-ltb" secondAttribute="bottom" constant="10" id="geP-6a-Wbz"/>

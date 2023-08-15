@@ -12,9 +12,7 @@ struct TeamsModel {
     
     func fromJsonToTeamsModel(_ serialized: [String: Any]) -> TeamsModel {
       var newTeams = TeamsModel()
-        let data = Dictionary<String, Any>()
         if let validTeams = serialized["teams"] as? Array<AnyObject> {
-            print(validTeams)
             for team in validTeams {
                 if let teamModel = TeamModel().fromJsonTeamModel(team) {
                     newTeams.teams.append(teamModel)

@@ -10,8 +10,10 @@ import UIKit
 class SportsViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     var interactor: Interactor<SportsViewController>?
     var leagueName: String = ""
+    var teamsFilter: [TeamModel] = []
     var teams: [TeamModel] = []
 
     override func viewDidLoad() {
@@ -20,20 +22,39 @@ class SportsViewController: UIViewController {
         interactor = Interactor(view: self)
         interactor?.getTeams(leagueName: self.leagueName)
 
-        let leagueCell = UINib(nibName: Constants.SportCellIdentifier, bundle: Bundle.main)
-        mainTableView.register(leagueCell, forCellReuseIdentifier: Constants.SportCellIdentifier)
+        let leagueCell = UINib(nibName: Constants.sportCellIdentifier, bundle: Bundle.main)
+        mainTableView.register(leagueCell, forCellReuseIdentifier: Constants.sportCellIdentifier)
     }
 
 }
 
+extension SportsViewController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        self.teamsFilter = []
+        
+        if searchText == "" {
+            self.teamsFilter = self.teams
+        }else{
+            for team in self.teams {
+                if team.strTeam.lowercased().contains(searchText.lowercased()){
+                    self.teamsFilter.append(team)
+                }
+            }
+        }
+        self.mainTableView.reloadData()
+    }
+}
+
 extension SportsViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.teams.count
+        return self.teamsFilter.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.SportCellIdentifier, for: indexPath) as? SportTableViewCell
-        let team = self.teams[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.sportCellIdentifier, for: indexPath) as? SportTableViewCell
+        let team = self.teamsFilter[indexPath.row]
+        cell?.selectionStyle = .none
         cell?.setUI(team)
         return cell!
     }
@@ -44,7 +65,7 @@ extension SportsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = SportDetailsViewController()
-        let team = self.teams[indexPath.row]
+        let team = self.teamsFilter[indexPath.row]
         controller.team = team
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -54,8 +75,8 @@ extension SportsViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension SportsViewController : BaseView {
     func showTeams(_ teams: [TeamModel]) {
-        print(teams.count)
         self.teams = teams
+        self.teamsFilter = teams
         self.mainTableView.reloadData()
     }
     
@@ -64,8 +85,6 @@ extension SportsViewController : BaseView {
     }
     
     func showError(_ error: Error) {
-        //
+        print(error)
     }
-    
-    
 }

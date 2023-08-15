@@ -12,9 +12,7 @@ struct LeaguesModel {
     
     func fromJsonToLeaguesModel(_ serialized: [String: Any]) -> LeaguesModel {
       var newLeagues = LeaguesModel()
-        let data = Dictionary<String, Any>()
         if let validLeagues = serialized["leagues"] as? Array<AnyObject> {
-            print("LEAGUES ")
             for league in validLeagues {
                 if let leagueModel = LeagueModel().fromJsonLeagueModel(league) {
                     newLeagues.leagues.append(leagueModel)

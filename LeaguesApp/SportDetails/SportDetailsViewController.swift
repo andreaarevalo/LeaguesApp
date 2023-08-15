@@ -24,18 +24,22 @@ class SportDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI(self.team!)
+        if let team = self.team {
+            setUI(team)
+        }
     }
     
     func setUI(_ team: TeamModel) {
         self.teamName.text = team.strTeam
-        self.formedYear.text = team.intFormedYear
+        self.formedYear.text = "Year " + team.intFormedYear
         self.sportName.text = team.strSport
         self.stadiumDescription.text = team.strStadiumDescription
-        self.stadiumCapacity.text = team.intStadiumCapacity
+        self.stadiumCapacity.text = "Stadium capacity " + team.intStadiumCapacity
         self.descriptionTeam.text = team.strDescriptionEN
         self.facebookButton.isHidden = team.strFacebook.isEmpty
-        self.instagramButton.isHidden = team.strInstagram.isEmpty
+        self.instagramButton.isHidden = team.strFacebook.isEmpty
+        self.instagramButton.layer.cornerRadius = 8
+        
         self.setImage()
     }
     
