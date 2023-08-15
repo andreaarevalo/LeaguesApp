@@ -12,7 +12,9 @@
             <connections>
                 <outlet property="badgeImageView" destination="CKq-7X-wtU" id="vI2-Ht-50q"/>
                 <outlet property="descriptionTeam" destination="W2S-yC-IfK" id="IFD-6T-IBh"/>
+                <outlet property="facebookButton" destination="UUB-m4-i6s" id="xhv-Oe-i6B"/>
                 <outlet property="formedYear" destination="f5t-3g-gvZ" id="7un-bE-81G"/>
+                <outlet property="instagramButton" destination="7cz-f6-XAN" id="ghW-a7-dJi"/>
                 <outlet property="sportName" destination="Onx-O2-spS" id="WVZ-Sd-IXb"/>
                 <outlet property="stadiumCapacity" destination="tPi-QN-Yge" id="xpT-ZB-ytb"/>
                 <outlet property="stadiumDescription" destination="5Jk-wm-hUh" id="Opp-hr-n54"/>
@@ -31,7 +33,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOX-j0-N1G">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="4000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="3500"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-7X-wtU">
                                     <rect key="frame" x="0.0" y="40" width="393" height="240"/>
@@ -81,29 +83,56 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-m4-i6s">
+                                    <rect key="frame" x="20" y="630.33333333333337" width="120" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="gom-F8-5pO"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Facebook"/>
+                                    <connections>
+                                        <action selector="didiTapFacebook:" destination="-1" eventType="touchUpInside" id="B2m-Rf-Sqa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cz-f6-XAN">
+                                    <rect key="frame" x="20" y="685.33333333333337" width="120" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="6uK-ji-YSy"/>
+                                    </constraints>
+                                    <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Instagram"/>
+                                    <connections>
+                                        <action selector="didTapInstagram:" destination="-1" eventType="touchUpInside" id="uyB-Wb-zdT"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="UUB-m4-i6s" firstAttribute="top" secondItem="W2S-yC-IfK" secondAttribute="bottom" constant="60" id="5FM-y8-wPo"/>
                                 <constraint firstItem="tPi-QN-Yge" firstAttribute="leading" secondItem="5Jk-wm-hUh" secondAttribute="leading" id="6Md-XW-8hg"/>
                                 <constraint firstAttribute="trailing" secondItem="CKq-7X-wtU" secondAttribute="trailing" id="AJB-x0-uxO"/>
                                 <constraint firstItem="tPi-QN-Yge" firstAttribute="trailing" secondItem="5Jk-wm-hUh" secondAttribute="trailing" id="C0x-wm-UJ0"/>
                                 <constraint firstItem="ePk-ea-TLp" firstAttribute="leading" secondItem="gOX-j0-N1G" secondAttribute="leading" constant="24" id="Dcd-NY-TCL"/>
                                 <constraint firstItem="CKq-7X-wtU" firstAttribute="top" secondItem="gOX-j0-N1G" secondAttribute="top" constant="40" id="Dza-Z2-SWx"/>
                                 <constraint firstItem="5Jk-wm-hUh" firstAttribute="top" secondItem="Onx-O2-spS" secondAttribute="bottom" constant="18" id="H7c-WZ-RoL"/>
-                                <constraint firstAttribute="height" constant="4000" id="JCG-Xn-qCb"/>
                                 <constraint firstItem="W2S-yC-IfK" firstAttribute="trailing" secondItem="Aqo-lG-3mI" secondAttribute="trailing" id="Q9R-QD-nP1"/>
                                 <constraint firstAttribute="trailing" secondItem="ePk-ea-TLp" secondAttribute="trailing" constant="24" id="Tgu-aA-L8X"/>
                                 <constraint firstItem="tPi-QN-Yge" firstAttribute="top" secondItem="5Jk-wm-hUh" secondAttribute="bottom" constant="19" id="Uvb-4v-xBC"/>
                                 <constraint firstItem="f5t-3g-gvZ" firstAttribute="trailing" secondItem="ePk-ea-TLp" secondAttribute="trailing" id="VD1-30-BQu"/>
+                                <constraint firstItem="7cz-f6-XAN" firstAttribute="leading" secondItem="UUB-m4-i6s" secondAttribute="leading" id="W2g-K6-nWb"/>
                                 <constraint firstItem="ePk-ea-TLp" firstAttribute="top" secondItem="CKq-7X-wtU" secondAttribute="bottom" constant="40" id="X2v-nj-XbJ"/>
                                 <constraint firstItem="Onx-O2-spS" firstAttribute="top" secondItem="f5t-3g-gvZ" secondAttribute="bottom" constant="8" symbolic="YES" id="aMb-13-5bk"/>
+                                <constraint firstItem="7cz-f6-XAN" firstAttribute="top" secondItem="UUB-m4-i6s" secondAttribute="bottom" constant="20" id="abq-oK-Iht"/>
                                 <constraint firstItem="W2S-yC-IfK" firstAttribute="top" secondItem="Aqo-lG-3mI" secondAttribute="bottom" constant="20" id="bY6-sw-hNg"/>
                                 <constraint firstItem="f5t-3g-gvZ" firstAttribute="top" secondItem="ePk-ea-TLp" secondAttribute="bottom" constant="20" id="fqn-3U-eA1"/>
+                                <constraint firstItem="UUB-m4-i6s" firstAttribute="leading" secondItem="gOX-j0-N1G" secondAttribute="leading" constant="20" id="gXJ-1e-3um"/>
                                 <constraint firstItem="f5t-3g-gvZ" firstAttribute="leading" secondItem="ePk-ea-TLp" secondAttribute="leading" id="gfB-au-tpA"/>
                                 <constraint firstItem="Onx-O2-spS" firstAttribute="leading" secondItem="f5t-3g-gvZ" secondAttribute="leading" id="heL-33-IeG"/>
                                 <constraint firstItem="5Jk-wm-hUh" firstAttribute="leading" secondItem="Onx-O2-spS" secondAttribute="leading" id="leH-yU-f4U"/>
                                 <constraint firstItem="Aqo-lG-3mI" firstAttribute="trailing" secondItem="tPi-QN-Yge" secondAttribute="trailing" id="mhm-D2-LIZ"/>
                                 <constraint firstItem="W2S-yC-IfK" firstAttribute="leading" secondItem="Aqo-lG-3mI" secondAttribute="leading" id="pPM-tM-2fG"/>
+                                <constraint firstAttribute="height" constant="3500" id="paM-C4-5HR"/>
                                 <constraint firstItem="Aqo-lG-3mI" firstAttribute="top" secondItem="tPi-QN-Yge" secondAttribute="bottom" constant="23" id="pg1-d2-v77"/>
                                 <constraint firstItem="CKq-7X-wtU" firstAttribute="leading" secondItem="gOX-j0-N1G" secondAttribute="leading" id="rTT-nS-GAa"/>
                                 <constraint firstItem="Aqo-lG-3mI" firstAttribute="leading" secondItem="tPi-QN-Yge" secondAttribute="leading" id="uK0-aj-hPw"/>
